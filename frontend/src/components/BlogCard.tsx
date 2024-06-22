@@ -60,7 +60,7 @@ export function Avatar({
 }) {
   return (
     <div
-      className={`relative inline-flex items-center justify-center overflow-hidden bg-gray-600 rounded-full ${
+      className={`relative inline-flex items-center justify-center overflow-hidden bg-gray-600 rounded-full cursor-pointer ${
         size === "small" ? "w-6 h-6" : "w-10 h-10"
       }`}
     >

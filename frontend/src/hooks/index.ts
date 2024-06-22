@@ -5,7 +5,7 @@ import { BACKEND_URL } from "../config";
 export interface Blog {
   content: string;
   title: string;
-  id: string;
+  id: number;
   author: {
     name: string;
   };
@@ -19,8 +19,8 @@ export const useBlog = ({ id }: { id: string }) => {
     axios
       .get(`${BACKEND_URL}/api/v1/blog/${id}`, {
         headers: {
-          Authorization: localStorage.getItem("token"),
-        },
+        Authorization: localStorage.getItem("token")      
+        }
       })
       .then((response) => {
         setblog(response.data.blog);

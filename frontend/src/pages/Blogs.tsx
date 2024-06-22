@@ -1,8 +1,10 @@
 import { AppBar } from "../components/AppBar";
 import { BlogCard } from "../components/BlogCard";
-import { Footer } from "../components/Footer";
+
 import { Scaleton } from "../components/ScaletonCard";
 import { useBlogs } from "../hooks";
+
+
 
 export const Blogs = () => {
   const { loading, blogs } = useBlogs();
@@ -21,15 +23,16 @@ export const Blogs = () => {
 
           </div>
         </div>
-        <Footer/>
+        
       </div>
     );
   }
 
   return (
     <div>
+      
       <AppBar />
-      <div className="flex justify-center">
+      <div className="flex justify-center bg-slate-100">
         <div className=" ">
           {blogs.map((blog) => (
             <BlogCard
@@ -42,7 +45,7 @@ export const Blogs = () => {
           ))}
         </div>
       </div>
-      <Footer/>
+      
 
     </div>
   );

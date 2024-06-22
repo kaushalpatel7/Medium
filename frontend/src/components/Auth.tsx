@@ -6,6 +6,7 @@ import axios from "axios";
 import { AppBar } from "./AppBar";
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
+  
   const navigate = useNavigate();
   const [postinputs, setpostinputs] = useState<signupInput>({
     name: "",
@@ -21,7 +22,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
       );
       const jwt = response.data;
       localStorage.setItem("token", jwt);
-      navigate("/blog");
+      navigate("/blogs");
     } catch (e) {
       alert("error while signin up");
     }
@@ -29,6 +30,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
 
   return (
     <div>
+     
       <AppBar />
       <div className="bg-white h-screen flex justify-center flex-col">
         <div className="flex justify-center ">
